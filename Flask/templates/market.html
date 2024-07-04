@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+
+<!-- title -->
+{% block title%} Market {%endblock%}
+
+<!-- content -->
+{% block content%}
+<table class="table table-striped container mt-3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>Barcode</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.type}}</td>
+      <td>{{item.barcode}}</td>
+      <td>
+        <button class="btn btn-info btn-sm">More Info</button>
+        <button class="btn btn-success btn-sm">Purchase this item</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock%}
